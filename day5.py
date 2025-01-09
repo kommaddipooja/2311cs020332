@@ -14,3 +14,14 @@ else:
         current += 1
     
     print("The sum of all numbers from 1 to", n, "is:", total)
+
+def calculate_square(n):
+    return n ** 2
+
+number = int(input("Enter a positive integer: "))
+
+if number <= 0:
+    print("Please enter a positive integer.")
+else:
+    result = calculate_square(number)
+    print(f"The square of {number} is: {result}")
