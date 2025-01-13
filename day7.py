@@ -32,3 +32,15 @@ print(df.head())
 
 print("\nBasic statistics:")
 print(df.describe())
+
+total_sales_by_region = df.groupby("Region")["Sales"].sum()
+print("Total sales for each region:")
+print(total_sales_by_region)
+
+most_sold_product = df.groupby("Product")["Quantity"].sum().idxmax()
+print("\nMost sold product (based on quantity):", most_sold_product)
+
+df["Profit Margin (%)"] = (df["Profit"] / df["Sales"]) * 100
+average_profit_margin_by_product = df.groupby("Product")["Profit Margin (%)"].mean()
+print("\nAverage profit margin for each product:")
+print(average_profit_margin_by_product)
